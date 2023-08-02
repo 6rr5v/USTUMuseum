@@ -5,7 +5,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="content">
 
-    </div>
+<div class = "container">
+    {% if gallery %}
+        <div class="gallery-block">
+            {% for el in gallery %}
+                <a href="{{ el.pic_url.url }}" data-lightbox="photos" data-title="{{ el.descript }}">
+                <img src = "{{ el.pic_url.url }}" class="img-thumbnail"/>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+    <p>Фотографий пока нет!</p>
+    {% endif %}
+</div>
+    <script src="../../../static/main/js/lightbox-plus-jquery.js"></script>
 {% endblock %}

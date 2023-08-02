@@ -10,6 +10,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 25px;
     border: 5px white;
 }
+
 .header,.footer {
     width: 100%;
     display: flex;
@@ -60,6 +61,72 @@ a{text-decoration-line: none;}
     max-width: 1500px;
     padding: 40px 20px;
 }
+
+.news-block-announcement-global{
+    font-family: "Century Gothic";
+    font-size: 12px;
+    border-bottom: black;
+    border-bottom-width: 2px;
+    width: 750px;
+    margin-left: 10px;
+
+}
+.news-block-announcement-img{
+    float: right;
+    border: 1px solid #D2DBEA;
+    margin-top: 5px;
+    padding: 3px;
+    width: 188px;
+    height: 120px;
+}
+
+.news-block-announcement-img img{
+
+    width: 180px;
+    height: 113px;
+}
+
+.container-news{
+    align-items: center;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 25%;
+
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 8%;
+}
+.container>.gallery-block{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 30px;
+}
+.container > .gallery-block img{
+    width: 100%;
+
+}
+
+.container > .news-block{
+    color:#000;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1500px;
+
+}
+.container > .news-block img{
+    float: left;
+    height: 256px;
+    width: 256px;
+    padding: 10px 10px ;
+}
+
 .about p{ max-width: 500px;margin: 20px auto}
 .about h1{font-size: 50px}
 
@@ -76,7 +143,7 @@ a{text-decoration-line: none;}
     font-size: 20px;
     font-weight: lighter;
     padding: 10px 20px;
-    margin-bottom: 0px;
 }
 .footerlink:hover{color: black;}
 .footer img{margin-right: 10px;}
+
