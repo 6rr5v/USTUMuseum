@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Gallery, News
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -19,6 +20,12 @@ def authentication(request):
 def gallery(request):
     gal = Gallery.objects.all()
     return render(request, 'main/gallery.html', {'gallery': gal})
+
+
+class NewsDetailView(DetailView):
+    model = News
+    template_name = 'news/detail_view.html'
+    context_object_name = 'article'
 
 
 def itm(request):

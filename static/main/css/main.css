@@ -11,6 +11,7 @@ body::-webkit-scrollbar-thumb{
     border: 5px white;
 }
 
+
 .header,.footer {
     width: 100%;
     display: flex;
@@ -81,11 +82,15 @@ a{text-decoration-line: none;}
 }
 
 .news-block-announcement-img img{
-
     width: 180px;
     height: 113px;
 }
-
+.news-block-announcement-name{
+    white-space: nowrap;
+}
+.news-block-announcement-name a{
+    margin-left: 10px;
+}
 .container-news{
     align-items: center;
     width: 50%;
@@ -93,7 +98,25 @@ a{text-decoration-line: none;}
     justify-content: center;
     padding: 5px;
     margin-left: 25%;
+}
 
+.container-news-detail{
+    font-family: "Century Gothic";
+    font-size: 12px;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 12.5%;
+}
+.news-img {
+    float: right;
+    border: 1px solid #D2DBEA;
+    padding: 3px;
+    height: 263px;
+}
+.news-block-text{
+    display: flex;
 }
 
 .container{
@@ -110,7 +133,6 @@ a{text-decoration-line: none;}
 }
 .container > .gallery-block img{
     width: 100%;
-
 }
 
 .container > .news-block{
@@ -118,13 +140,12 @@ a{text-decoration-line: none;}
     text-align: center;
     margin: 0 auto;
     max-width: 1500px;
-
 }
 .container > .news-block img{
     float: left;
     height: 256px;
     width: 256px;
-    padding: 10px 10px ;
+    padding: 10px 10px;
 }
 
 .about p{ max-width: 500px;margin: 20px auto}
@@ -143,7 +164,10 @@ a{text-decoration-line: none;}
     font-size: 20px;
     font-weight: lighter;
     padding: 10px 20px;
+    margin-bottom: 0px;
 }
 .footerlink:hover{color: black;}
-.footer img{margin-right: 10px;}
+.footer img{
+    margin-right: 10px;
+}
 

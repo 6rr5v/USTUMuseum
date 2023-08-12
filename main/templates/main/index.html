@@ -9,11 +9,9 @@
             {% for el in news %}
                 <div class="container-news clearfix">
                     <div class = "news-block-announcement-global clearfix">
-                        <div class="news-block-date-created">
+                        <div class="news-block-announcement-name">
                             {{el.date|date:"d.m.Y" }}
-                        </div>
-                        <div class="news-block-title">
-                            <a href="">
+                            <a href="{% url 'news-detail' el.id %}">
                                 {{ el.title }}
                             </a>
                         </div>

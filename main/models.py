@@ -2,7 +2,7 @@ from django.db import models
 
 
 class News(models.Model):
-    id_news = int
+    id = int
     title = models.CharField('Название', max_length=100)
     announcement = models.CharField('Текст для карточки', max_length=150)
     description = models.TextField('Описание')
