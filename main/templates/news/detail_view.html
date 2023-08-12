@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+   {{ article.title }} | Музей УГТУ
+{% endblock %}
+
+{% block content %}
+    <div class="container-news-detail">
+        <div class="news-block">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.date|date:"d.m.Y" }}</p>
+            <div class="news-block-text">
+                <p>{{ article.description }}</p>
+                <div class="news-img">
+                    <img src="{{ article.pictures.url }}" height="256">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
