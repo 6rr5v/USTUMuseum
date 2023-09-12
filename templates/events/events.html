@@ -1,0 +1,29 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}
+    События
+{% endblock %}
+
+{% block content %}
+{% if events %}
+            {% for el in events %}
+                <div class="container-news clearfix">
+                    <div class = "news-block-announcement-global clearfix">
+                        <div class="news-block-announcement-name">
+                            {{el.date_event|date:"d.m.Y" }}
+                            {{ el.title_event }}
+
+                        </div>
+                        <div class="news-block-announcement-local">
+                            {{ el.announcement_event }}
+                        </div>
+                    </div>
+                    <div class="news-block-announcement-img ">
+                            <img src="{{ el.picture_event.url }}">
+                    </div>
+                </div>
+            {% endfor %}
+    {% else  %}
+    <p>Событий пока нет!</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Новости
+{% endblock %}
+
+{% block content %}
+    {% if news %}
+            {% for el in news %}
+                <div class="container-news clearfix">
+                    <div class = "news-block-announcement-global clearfix">
+                        <div class="news-block-announcement-name">
+                            {{el.date|date:"d.m.Y" }}
+                            <a href="{% url 'news-detail' el.id %}">
+                                {{ el.title }}
+                            </a>
+                        </div>
+                        <div class="news-block-announcement-local">
+                            {{ el.announcement }}
+                        </div>
+                    </div>
+                    <div class="news-block-announcement-img ">
+                            <img src="{{ el.pictures.url }}">
+                    </div>
+                </div>
+
+            {% endfor %}
+    {% else  %}
+    <p>Новостей пока нет!</p>
+
+    {% endif %}
+{% endblock %}

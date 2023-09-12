@@ -1,0 +1,60 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Музей УГТУ
+{% endblock %}
+
+{% block content %}
+    <div class="banner">
+
+    </div>
+    <div class="news">
+    <p>Новости:</p>
+    {% if news %}
+            {% for el in news %}
+                <div class="container-news clearfix">
+                    <div class = "news-block-announcement-global clearfix">
+                        <div class="news-block-announcement-name">
+                            {{el.date|date:"d.m.Y" }}
+                            <a href="{% url 'news-detail' el.id %}">
+                                {{ el.title }}
+                            </a>
+                        </div>
+                        <div class="news-block-announcement-local">
+                            {{ el.announcement }}
+                        </div>
+                    </div>
+                    <div class="news-block-announcement-img ">
+                            <img src="{{ el.pictures.url }}">
+                    </div>
+                </div>
+            {% endfor %}
+    {% else  %}
+    <p>Новостей пока нет!</p>
+    {% endif %}
+    </div>
+    <div class ="events">
+    <p>Ближайшие события:</p>
+    {% if events %}
+            {% for el in events %}
+                <div class="container-news clearfix">
+                    <div class = "news-block-announcement-global clearfix">
+                        <div class="news-block-announcement-name">
+                            {{el.date_event|date:"d.m.Y" }}
+                            {{ el.title_event }}
+                        </div>
+                        <div class="news-block-announcement-local">
+                            {{ el.announcement_event }}
+                        </div>
+                    </div>
+                    <div class="news-block-announcement-img ">
+                            <img src="{{ el.picture_event.url }}">
+                    </div>
+                </div>
+            {% endfor %}
+    {% else  %}
+    <p>Событий пока нет!</p>
+    {% endif %}
+</div>
+
+{% endblock %}
